@@ -1,0 +1,31 @@
+<div class="px-4 py-2">
+  <div class="py-2 d-flex">
+    <div class="flex-grow-1">List of Posts :</div>
+    <button type="button" class="btn btn-primary float-right">
+      <a [routerLink]="['/add']">Add Product</a>
+    </button>
+  </div> 
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Body</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of allPosts; index as i">
+          <th scope="row">{{ data.id }}</th>
+          <td>{{ data.title }}</td>
+          <td>{{ data.body }}</td>
+          <td>
+            <button class="btn btn-outline-primary">Edit</button>
+            <!-- <button class="btn btn-primary">Delete</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
